@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Table(name = "product")
+@Table(name = "products")
 @Entity(name = "Product")
 @Getter
 @NoArgsConstructor
@@ -19,14 +19,14 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
     private String description;
 
-    private BigDecimal value;
+    private BigDecimal price;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -34,7 +34,7 @@ public class Product {
     public Product(DataRegisterProducts data) {
         this.name = data.name();
         this.description = data.description();
-        this.value = data.value();
+        this.price = data.price();
         this.type = data.type();
     }
 }

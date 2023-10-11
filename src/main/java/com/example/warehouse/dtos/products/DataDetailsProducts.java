@@ -8,12 +8,13 @@ import jakarta.validation.constraints.PositiveOrZero;
 import java.math.BigDecimal;
 
 public record DataDetailsProducts(
+        Long id,
         String name,
         String description,
-        BigDecimal value,
+        BigDecimal price,
         Type type
 ) {
     public DataDetailsProducts(Product product) {
-        this(product.getName(), product.getDescription(), product.getValue(), product.getType());
+        this(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getType());
     }
 }

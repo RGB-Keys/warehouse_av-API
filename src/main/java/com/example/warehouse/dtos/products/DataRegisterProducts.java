@@ -9,11 +9,12 @@ import java.math.BigDecimal;
 public record DataRegisterProducts(
         @NotBlank
         String name,
-        @NotBlank
+
         String description,
+
         @NotNull
         @PositiveOrZero
-        BigDecimal value,
+        BigDecimal price,
 
         @NotNull
         Type type

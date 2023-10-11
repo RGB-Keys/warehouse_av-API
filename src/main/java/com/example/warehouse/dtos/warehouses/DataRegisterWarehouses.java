@@ -7,10 +7,10 @@ import jakarta.validation.constraints.NotNull;
 
 public record DataRegisterWarehouses(
         @NotBlank
-        String name,
+        String name
 
-         @NotNull
-         @Valid
-         DataAddress address
+         //@NotNull
+         //@Valid
+         //DataAddress address
 ) {
 }
